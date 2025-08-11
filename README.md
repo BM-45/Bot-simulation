@@ -6,7 +6,7 @@ This repository contains:
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 ROS 2 Humble with the following packages installed:
 
