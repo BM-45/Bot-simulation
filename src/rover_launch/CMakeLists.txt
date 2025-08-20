@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(robot_state_publisher REQUIRED)
 
-install( DIRECTORY launch
+install( DIRECTORY  launch config
 	DESTINATION share/${PROJECT_NAME}
 	)
 
