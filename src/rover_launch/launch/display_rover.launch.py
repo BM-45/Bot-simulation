@@ -4,8 +4,10 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Comm
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-
+# Rviz Launch file for the rover.
 def generate_launch_description():
+
+    # paths for the packages.
     urdf_pkg_arg = DeclareLaunchArgument(
             'urdf_package', default_value='rover_description',
             description='Package that contains the URDF/Xacro'

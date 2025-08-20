@@ -1,0 +1,28 @@
+{
+  "name": "ROS2 Humble + Gazebo Fortress Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "root",
+  
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/rover_ws/src,type=bind"
+  ],
+  "workspaceFolder": "/rover_ws",
+  "runArgs": [
+    "--network=host",
+    "--env=DISPLAY=host.docker.internal:0.0",
+    "--env=QT_X11_NO_MITSHM=1",
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw"
+  ],
+  "containerEnv": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8",
+    "ROS_DOMAIN_ID": "42",
+    "ROS_LOCALHOST_ONLY": "1",
+    "DISPLAY": "host.docker.internal:0.0",
+    "LIBGL_ALWAYS_INDIRECT": "0"    
+  },
+  "postCreateCommand": "rosdep update || true",
+}
